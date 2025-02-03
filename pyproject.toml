@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simple_transformer"
+version = "0.0.1"
+description = "A simple Transformer implementation"
+authors = [{ name = "Suryansh Shakya", email = "suryanshsinghshakya1@gmail.com" }]
+dependencies = [
+    "torch"
+]
