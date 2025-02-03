@@ -4,7 +4,7 @@ import torch.nn as nn
 from .encoder import Encoder
 from .decoder import Decoder
 
-class Transformer(nn.module):
+class Transformer(nn.Module):
     def __init__(
             self,
             src_vocab_size,
@@ -13,9 +13,10 @@ class Transformer(nn.module):
             trg_pad_idx,
             embed_size=512,
             num_layers=6,
+            forward_expansion=4,
             heads=8,
             dropout=0,
-            device="cuda",
+            device="cpu",
             max_length=1000
     ):
         super(Transformer, self).__init__()
@@ -26,6 +27,7 @@ class Transformer(nn.module):
             num_layers,
             heads,
             device,
+            forward_expansion,
             dropout,
             max_length
         )
@@ -35,6 +37,7 @@ class Transformer(nn.module):
             embed_size,
             num_layers,
             heads,
+            forward_expansion,
             dropout,
             device,
             max_length
@@ -69,6 +72,6 @@ if __name__ == "__main__":
     trg_pad_idx = 0
     src_vocab_size = 10
     trg_vocab_size = 10
-    model = Transfomer(src_vocab_size, trg_vocab_size, src_pad_idx, trg_pad_idx).to(device)
+    model = Transformer(src_vocab_size, trg_vocab_size, src_pad_idx, trg_pad_idx).to(device)
     out = model(x, trg[:, :-1])
     print(out.shape)

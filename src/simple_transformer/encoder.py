@@ -3,7 +3,7 @@ import torch.nn as nn
 
 from .transformer_block import TransformerBlock
 
-class Encoder(nn.Encoder):
+class Encoder(nn.Module):
     def __init__(
         self,
         src_vocab_size,
