@@ -97,6 +97,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - This package is inspired by the [original Transformer model](https://arxiv.org/abs/1706.03762).
 
----
-
-By adjusting the structure and including headers for each section, the README is now cleaner and more visually appealing. This layout should enhance readability and user experience when browsing through your GitHub repository!
